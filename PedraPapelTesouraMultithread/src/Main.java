@@ -12,7 +12,7 @@ public class Main {
 		
 		
 		//JOGADA MULTITHREAD
-		long tempoInitThread = System.currentTimeMillis();
+//		long tempoInitThread = System.currentTimeMillis();
 		Player[] threads = new Player[2];
 		for(int i = 0; i < threads.length; i++) {
 			threads[i] = new Player(i, numJogadas);
@@ -20,21 +20,21 @@ public class Main {
 		}
 			
 		verificarGanhador(threads[0], threads[1], numJogadas);
-		long tempoFinalThread = System.currentTimeMillis();
+//		long tempoFinalThread = System.currentTimeMillis();
 
 	
-		
-		long tempoInit = System.currentTimeMillis();
+		//JOGA SINGLETHREAD
+//		long tempoInit = System.currentTimeMillis();
 		Player[] players = new Player[2];
 		players[0] = new Player(0, numJogadas);
 		players[1] = new Player(1, numJogadas);
 		players[0].jogar(numJogadas);
 		players[1].jogar(numJogadas);
 		verificarGanhador(players[0], players[1], numJogadas);
-		long tempoFinal = System.currentTimeMillis();
+//		long tempoFinal = System.currentTimeMillis();
 
-		System.out.println("Tempo total: "+(tempoFinal - tempoInit));
-		System.out.println("Thread Tempo total: "+(tempoFinalThread - tempoInitThread));
+//		System.out.println("Tempo total: "+(tempoFinal - tempoInit));
+//		System.out.println("Thread Tempo total: "+(tempoFinalThread - tempoInitThread));
 
 
 		
