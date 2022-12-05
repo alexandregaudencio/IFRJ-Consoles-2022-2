@@ -10,20 +10,12 @@ public class Player extends Thread {
 	private boolean jogou = false;
 	//0 : Pedra  //1 : Papel  //2 : Tesoura
 	private Random escolha = new Random();
-
-	@Override
-	public void run() {
-		super.run();
-
-	}
 	
 	public Player(int id) {
 		this.id = id;
 		semaforo = new Semaphore(1);
 	}
-	
-
-	
+		
 	public long getId() {
 		return id;
 	}
@@ -33,16 +25,17 @@ public class Player extends Thread {
 	public void acrescentaPonto() {
 		pontos++;
 	}
-	private int escolher() {
-		return escolha.nextInt(3);
-	}
-	
+
 	public int getJogada() {
 		return jogada;
 	}
 	
 	public boolean getJogou() {
 		return jogou;
+	}
+	
+	private int escolher() {
+		return escolha.nextInt(3);
 	}
 
 	public void jogar() {

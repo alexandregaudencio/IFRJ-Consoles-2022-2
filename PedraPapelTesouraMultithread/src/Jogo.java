@@ -5,7 +5,7 @@ public class Jogo extends Thread {
 	private  Player player1 = new Player(0);
 	private  Player player2 = new Player(1);
 	private int jogadas;
-	private int jogoAtual = 1;
+	private int jogoAtual = 0;
 	static Hashtable hashtable = new Hashtable();
 	
 	public Jogo(int jogadas) {
@@ -29,7 +29,7 @@ public class Jogo extends Thread {
 	}
 
 	public void lancarRodadas() {
-		while(jogoAtual <= jogadas) {	
+		while(jogoAtual < jogadas) {	
 			if(!player1.getJogou() && !player2.getJogou()) {
 				
 				player1.jogar();
@@ -56,7 +56,7 @@ public class Jogo extends Thread {
 	}
 
 	private void verificarJogo() {
-		System.out.println("jogador1. Jogada"+jogoAtual+" "+hashtable.get(player1.getJogada()));
+		System.out.print("jogador1. Jogada"+jogoAtual+" "+hashtable.get(player1.getJogada())+"  &  ");
 		System.out.println("jogador2. Jogada"+jogoAtual+" "+hashtable.get(player2.getJogada()));
 		
 		int diferenca = player1.getJogada() - player2.getJogada();
@@ -78,7 +78,7 @@ public class Jogo extends Thread {
 		if(player1.getPontos() > player2.getPontos()) 
 			System.out.println("jogador1 VENCEU!");
 		else 
-			System.out.println("jogador1 VENCEU!");
+			System.out.println("jogador2 VENCEU!");
 	}
 	
 	
